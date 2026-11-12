@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0E0E10;font-family:'Montserrat',Arial,sans-serif}
+#s{position:relative;width:1080px;height:1920px}
+.t{position:absolute;left:90px;right:90px;color:#F5F1E8;font-weight:800;line-height:1.05}
+</style></head><body><div id="s">
+<div class="t" id="a" style="top:520px;font-size:120px">5,126</div>
+<div class="t" id="b" style="top:680px;font-size:64px;color:#FF5A1F">FAILED PROTOTYPES</div>
+</div><script>
+const FPS=30,DUR=3;window.TOTAL=FPS*DUR;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const easeOut=t=>1-Math.pow(1-t,3);
+window.renderFrame=f=>{const t=f/FPS;
+ const p=easeOut(clamp(t/0.6));a.style.opacity=p;a.style.transform=`translateY(${(1-p)*80}px)`;
+ a.textContent=Math.round(5126*easeOut(clamp(t/1.5))).toLocaleString('en-US');
+ const q=easeOut(clamp((t-0.8)/0.5));b.style.opacity=q;b.style.transform=`scale(${0.8+0.2*q})`;};
+</script></body></html>
